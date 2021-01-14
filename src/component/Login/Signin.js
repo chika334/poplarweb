@@ -37,7 +37,7 @@ const styles = (theme) => ({
     marginLeft: theme.spacing(),
     marginRight: theme.spacing(),
     width: 300,
-    backgroundColor: "red"
+    backgroundColor: "red",
   },
   submit: {
     margin: "auto",
@@ -75,9 +75,6 @@ class Signin extends React.Component {
       if (error.id === "LOGIN_FAIL") {
         this.setState({ error: error.message.message });
       }
-      //  else {
-      //   this.setState({error: null})
-      // }
     } else {
       this.check();
     }
@@ -88,7 +85,7 @@ class Signin extends React.Component {
     if (isAuthenticated) {
       this.setState({ redirect: true });
       this.sendRedirect();
-      this.props.history.push("/powerweb/profile/dashboard");
+      this.props.history.push("/poplarpower/profile/dashboard");
     }
   };
 
@@ -108,8 +105,8 @@ class Signin extends React.Component {
   };
 
   forgotPassword = (e) => {
-    this.props.history.push(`/powerweb/forgotPasword`)
-  }
+    this.props.history.push(`/poplarpower/forgotPasword`);
+  };
 
   render() {
     const { classes } = this.props;
@@ -118,7 +115,7 @@ class Signin extends React.Component {
         <Card className={classes.card}>
           <CardContent>
             <Typography type="" className={classes.title}>
-              signin
+              Signin
             </Typography>
             <TextField
               id="email"
@@ -142,9 +139,9 @@ class Signin extends React.Component {
             <br />
             {this.state.error && (
               <Typography component="p" color="error">
-                <Icon color="error" className={classes.error}>
+                {/* <Icon color="error" className={classes.error}>
                   error
-                </Icon>
+                </Icon> */}
                 {this.state.error}
               </Typography>
             )}

@@ -8,7 +8,7 @@ const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => (
     <Component {...props} />
     :
     <Redirect to={{
-        pathname: '/powerweb/signin',
+        pathname: '/poplarpower/signin',
         state: {
           from: props.location
         }

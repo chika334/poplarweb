@@ -172,34 +172,34 @@ const styles = (theme) => ({
 const sidebarItem = [
   {
     name: "Buy Token",
-    url: "/powerweb/profile/dashboard/buytoken",
+    url: "/poplarpower/profile/dashboard/buytoken",
     src: `${cart}`,
   },
   {
     name: "Transactions Report",
-    url: "/powerweb/profile/dashboard/report",
+    url: "/poplarpower/profile/dashboard/report",
     src: `${businessreport}`,
   },
   {
     name: "Get Token",
-    url: "/powerweb/profile/dashboard/together",
+    url: "/poplarpower/profile/dashboard/together",
     src: `${workingtogether}`,
   },
   {
     name: "Wallet",
-    url: "/powerweb/profile/dashboard/wallet",
+    url: "/poplarpower/profile/dashboard/wallet",
     src: `${wallet}`,
   },
   {
     name: "Wallet Report",
-    url: "/powerweb/profile/dashboard/reportwallet",
+    url: "/poplarpower/profile/dashboard/reportwallet",
     src: `${wallet}`,
   },
-  {
-    name: "Debit Dallet",
-    url: "/powerweb/profile/dashboard/debitwallet",
-    src: `${wallet}`,
-  },
+  // {
+  //   name: "Debit Wallet",
+  //   url: "#",
+  //   src: `${wallet}`,
+  // },
 ];
 
 const Services = (props) => {

@@ -95,29 +95,6 @@ class VerticalLinearStepper extends Component {
     // clearErrors: PropTypes.func.isRequired,
   };
 
-  // componentDidUpdate(prevProps) {
-  //   const { error, isAuthenticated } = this.props;
-  //   if (error !== prevProps.error) {
-  //     // check for register error
-  //     if (error.id === "EDITPROFILE_FAIL") {
-  //       this.setState({ error: error.message.message });
-  //     }
-  //   } else {
-  //     this.sendRedirect();
-  //   }
-  // }
-
-  // check = () => {
-  //   const { isAuthenticated } = this.props;
-  //   if (isAuthenticated) {
-  //     this.sendRedirect();
-  //   }
-  // };
-
-  // sendRedirect = () => {
-  //   this.props.clearErrors();
-  // };
-
   handleNext = () => {
     this.setState({ activeStep: this.state.activeStep + 1 });
   };
@@ -242,16 +219,6 @@ class VerticalLinearStepper extends Component {
     const third = (
       <Card className={classes.card}>
         <CardContent>
-          {/* <TextField
-            id="position"
-            label="Position"
-            type="text"
-            className={classes.textField}
-            value={this.state.position || ""}
-            onChange={this.handleNumberChange("position")}
-            margin="normal"
-          />{" "}
-          <br /> */}
           <TextField
             id="contactEmail"
             label="Contact Email"

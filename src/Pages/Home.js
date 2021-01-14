@@ -72,7 +72,7 @@ function HomePage(props) {
           <Banner
             title={headerText}
           >
-            <Button variant="contained" color="primary" href="/powerweb/about">
+            <Button variant="contained" color="primary" href="/poplarpower/about">
               learn more
             </Button>
           </Banner>

@@ -65,7 +65,7 @@ export class App extends Component {
       store.dispatch(getTransactions());
       store.dispatch(wallets());
     } else {
-      return <Redirect to="/powerweb/signin" />;
+      return <Redirect to="/poplarpower/signin" />;
     }
   }
   render() {
@@ -75,60 +75,60 @@ export class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path={"/"} component={Home} />
-            <Route exact path={"/powerweb/signin"} component={Login} />
-            <Route exact path={"/powerweb/signup"} component={Register} />
-            <Route exact path={"/powerweb/about"} component={About} />
+            <Route exact path={"/poplarpower/signin"} component={Login} />
+            <Route exact path={"/poplarpower/signup"} component={Register} />
+            <Route exact path={"/poplarpower/about"} component={About} />
             {/* <Route exact path="/powerweb/forgotPasword" component={forgotPassword} /> */}
             {/* profile */}
-            <ProtectedRoutes path="/powerweb/profile/:path?">
+            <ProtectedRoutes path="/poplarpower/profile/:path?">
               <Switch>
                 <ProtectedRoutes
-                  path="/powerweb/profile/dashboard"
+                  path="/poplarpower/profile/dashboard"
                   exact
                   component={Dashboard}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile"
+                  path="/poplarpower/profile"
                   exact
                   component={ProfileDetails}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile/dashboard/buytoken"
+                  path="/poplarpower/profile/dashboard/buytoken"
                   exact
                   component={BuyToken}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile/dashboard/report"
+                  path="/poplarpower/profile/dashboard/report"
                   exact
                   component={Report}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile/dashboard/wallet"
+                  path="/poplarpower/profile/dashboard/wallet"
                   exact
                   component={wallet}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile/dashboard/together"
+                  path="/poplarpower/profile/dashboard/together"
                   exact
                   component={Together}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile/dashboard/reportwallet"
+                  path="/poplarpower/profile/dashboard/reportwallet"
                   exact
                   component={WalletReport}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile/dashboard/debitwallet"
+                  path="/poplarpower/profile/dashboard/debitwallet"
                   exact
                   component={DebitWallet}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile/success"
+                  path="/poplarpower/profile/success"
                   exact
                   component={TokenSuccess}
                 />
                 <ProtectedRoutes
-                  path="/powerweb/profile/setpassword"
+                  path="/poplarpower/profile/setpassword"
                   exact
                   component={resetPasswordDetails}
                 />

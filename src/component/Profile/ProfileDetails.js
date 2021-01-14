@@ -73,7 +73,8 @@ export default function SimpleTabs() {
         <ResetPassword />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <ArrangeForm />
+        No data yet
+        {/* <ArrangeForm /> */}
       </TabPanel>
     </div>
   );

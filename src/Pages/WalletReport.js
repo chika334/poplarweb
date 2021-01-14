@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import "../css/report.css";
+import moment from 'moment'
 
 const styles = (theme) => ({
   root: {
@@ -34,6 +35,7 @@ class WalletReport extends Component {
                 <th>id</th>
                 <th>Amount</th>
                 <th>Refernce Number</th>
+                <th>Date</th>
                 <th>Source Name</th>
               </tr>
             </thead>
@@ -41,6 +43,7 @@ class WalletReport extends Component {
               {this.props.wallet.wallet === null
                 ? ""
                 : this.props.wallet.wallet.map((result, index) => {
+                  console.log(result)
                     return (
                       <tr key={index}>
                         <td data-title="id">{result.id}</td>
@@ -48,6 +51,7 @@ class WalletReport extends Component {
                         <td data-title="Reference Number">
                           {result.reference}
                         </td>
+                        <td data-title="Date">{moment(new Date(result.fundSourceid.timestamp).getTime()).format("YYYY-MM-DD hh:mm:ss")}</td>
                         <td data-title="Source Name">
                           {result.fundSourceid.sourceName}
                         </td>

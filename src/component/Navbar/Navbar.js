@@ -13,22 +13,22 @@ export class Navbar extends Component {
         <div className="nav-links">
           <ul>
             <li className="nav-link">
-              <Link to="/powerweb">Home</Link>
+              <Link to="/">Home</Link>
             </li>
-            <li className="nav-link">
+            {/* <li className="nav-link">
               <Link to="#">Contact</Link>
-            </li>
+            </li> */}
             <li className="nav-link">
-              <Link to="/powerweb/about">About</Link>
+              <Link to="/poplarpower/about">About</Link>
             </li>
           </ul>
         </div>
 
         <div className="log-sign">
-          <Link to="/powerweb/signin" className="btn transparent">
+          <Link to="/poplarpower/signin" className="btn transparent">
             Log in
           </Link>
-          <Link to="/powerweb/signup" className="btn solid">
+          <Link to="/poplarpower/signup" className="btn solid">
             Sign up
           </Link>
         </div>
@@ -42,17 +42,17 @@ export class Navbar extends Component {
               <Link to="/">Home</Link>
             </li>
             <li className="nav-link">
-              <Link to="/powerweb/profile/dashboard">Dashboard</Link>
+              <Link to="/poplarpower/profile/dashboard">Dashboard</Link>
             </li>
 
             <li className="nav-link">
-              <Link to="/powerweb/about">About</Link>
+              <Link to="/poplarpower/about">About</Link>
             </li>
           </ul>
         </div>
 
         <div className="log-sign">
-          <Link to="/powerweb/profile">
+          <Link to="/poplarpower/profile">
             <Button>
               {user === null ? "" : `Welcome ${user.user.firstName}`}
             </Button>

@@ -1,5 +1,5 @@
 import React from "react";
-import { signup } from '../../_action/userAction'
+import { signup } from "../../_action/userAction";
 // import { create } from "../../api-user/api-user";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -9,16 +9,16 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
+// import Dialog from "@material-ui/core/Dialog";
+// import DialogActions from "@material-ui/core/DialogActions";
+// import DialogContent from "@material-ui/core/DialogContent";
+// import DialogContentText from "@material-ui/core/DialogContentText";
+// import DialogTitle from "@material-ui/core/DialogTitle";
 import TextField from "@material-ui/core/TextField";
-import Icon from "@material-ui/core/Icon";
-import {connect} from 'react-redux' 
-import './verify.css'
-import { clearErrors } from '../../_action/errorAction'
+// import Icon from "@material-ui/core/Icon";
+import { connect } from "react-redux";
+import "./verify.css";
+import { clearErrors } from "../../_action/errorAction";
 
 const styles = (theme) => ({
   card: {
@@ -48,7 +48,7 @@ const styles = (theme) => ({
 
 class Signup extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       firstName: "",
       lastName: "",
@@ -70,15 +70,15 @@ class Signup extends React.Component {
     authUser: PropTypes.object.isRequired,
     signup: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
-    clearErrors: PropTypes.func.isRequired
+    clearErrors: PropTypes.func.isRequired,
   };
 
   componentDidUpdate(prevProps) {
-    const {error, isAuthenticated} = this.props
+    const { error, isAuthenticated } = this.props;
     if (error !== prevProps.error) {
       // check for register error
-      if (error.id === 'REGISTER_FAIL') {
-        this.setState({error: error.message.message})
+      if (error.id === "REGISTER_FAIL") {
+        this.setState({ error: error.message.message });
       }
     } else {
       this.check();
@@ -86,34 +86,52 @@ class Signup extends React.Component {
   }
 
   check = () => {
-    const {isAuthenticated} = this.props
-    if(isAuthenticated) {
-      this.setState({open: true})
+    const { isAuthenticated } = this.props;
+    if (isAuthenticated) {
+      this.setState({ open: true });
       this.sendRedirect();
+      this.props.history.push("/poplarpower/profile/dashboard");
     }
-  }
+  };
 
   sendRedirect = () => {
-    this.props.clearErrors()
-  }
+    this.props.clearErrors();
+  };
 
   clickSubmit = (e) => {
     e.preventDefault();
-    const { firstName, lastName, email, phone, password, countryId } = this.state
-    const user = {
+    const {
       firstName,
       lastName,
       email,
       phone,
       password,
       countryId,
-    };
-
-    this.props.signup(user)
+    } = this.state;
+    if (firstName === "" ||lastName === "" ||email === "" ||phone === "" ||password === "") {
+      this.setState({
+        error: "All fields should be filled",
+      });
+    }
+    else {
+      const user = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        password,
+        countryId,
+      };
+  
+      this.props.signup(user);
+    }
   };
 
   render() {
     const { classes } = this.props;
+    // if(this.state.open) {
+    //   this.props.history.push('/powerweb/signin')
+    // }
     return (
       <div>
         <Card className={classes.card}>
@@ -170,9 +188,9 @@ class Signup extends React.Component {
             <br />
             {this.state.error && (
               <Typography component="p" color="error">
-                <Icon color="error" className={classes.error}>
+                {/* <Icon color="error" className={classes.error}>
                   error
-                </Icon>
+                </Icon> */}
                 {this.state.error}
               </Typography>
             )}
@@ -189,7 +207,7 @@ class Signup extends React.Component {
             </Button>
           </CardActions>
         </Card>
-        <Dialog open={this.state.open} disableBackdropClick={true}>
+        {/* <Dialog open={this.state.open} disableBackdropClick={true}>
           <DialogTitle>New Account</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -203,16 +221,18 @@ class Signup extends React.Component {
               </Button>
             </Link>
           </DialogActions>
-        </Dialog>
+        </Dialog> */}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isAuthenticated: state.authUser.isAuthenticated,
   authUser: state.authUser,
-  error: state.error
-})
+  error: state.error,
+});
 
-export default connect(mapStateToProps, { signup, clearErrors })(withStyles(styles)(Signup))
+export default connect(mapStateToProps, { signup, clearErrors })(
+  withStyles(styles)(Signup)
+);

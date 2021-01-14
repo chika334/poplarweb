@@ -19,12 +19,10 @@ class Footer extends Component {
               |
               <a href="/">Blog</a>
               |
-              <a href="/">About</a>
-              |
-              <a href="/">Contact</a>
+              <a href="/poplarpower/about">About</a>
             </p>
 
-            <p className="footer-company-name">© 2019 Eduonix Learning Solutions Pvt. Ltd.</p>
+            <p className="footer-company-name">© 2021.</p>
           </div>
 
           <div className="footer-center">
@@ -40,7 +38,7 @@ class Footer extends Component {
             </div>
             <div>
               <i className="fa fa-envelope"></i>
-              <p><a href="mailto:support@eduonix.com">support@eduonix.com</a></p>
+              <p><a href="mailto:support@eduonix.com">support@poplarpower.com</a></p>
             </div>
           </div>
           <div className="footer-right">

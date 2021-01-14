@@ -1,0 +1,74 @@
+.appPadds {
+  margin-left: 7%;
+  margin-right: 7%
+}
+
+/* 3 card side by side */
+.wrappers {
+  /* background-color: red; */
+  width: 100%;
+  clear: both;
+}
+.firster {
+  /* background-color:red; */
+  width: 200px;
+  float: left;
+}
+
+/* set 3 items side by side */
+.news {
+  /* background-color: greenyellow; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.news > div {
+  /* background-color: green; */
+  margin: 10px;
+  /* padding: 10px; */
+  width: 30%;
+}
+
+.app {
+  width: 500px; /* adjust width for dashboard chart */
+}
+
+@media (max-device-width: 500px) {
+  .app {
+    width: 300px; /* adjust width for dashboard chart */
+  }
+  .cards {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		flex: 0 1 calc(25% - 1em)
+  }
+  
+  .wrappers {
+    /* background-color: red; */
+    width: 100%;
+    clear: both;
+  }
+
+	.cards:hover {
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	/* Add some padding inside the card container */
+	.container {
+		padding: 2px 16px;
+	}
+
+  .news {
+    /* background-color: brown; */
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .news > div {
+    /* background-color:aquamarine; */
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+  }
+}
